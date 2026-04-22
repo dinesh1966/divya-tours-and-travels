@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,7 @@
             background: var(--admin-dark);
             padding: 15px 0;
             color: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -76,14 +77,16 @@
         }
 
         @media (max-width: 992px) {
-            .admin-grid { grid-template-columns: 1fr; }
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .admin-card {
             background: var(--admin-card);
             border-radius: 12px;
             padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--admin-border);
             margin-bottom: 30px;
         }
@@ -143,14 +146,35 @@
             font-size: 14px;
         }
 
-        .btn-add { background: var(--admin-primary); color: white; }
-        .btn-add:hover { background: #d67a00; transform: translateY(-2px); }
+        .btn-add {
+            background: var(--admin-primary);
+            color: white;
+        }
 
-        .btn-secondary { background: #eee; color: #555; }
-        .btn-secondary:hover { background: #e0e0e0; }
+        .btn-add:hover {
+            background: #d67a00;
+            transform: translateY(-2px);
+        }
 
-        .btn-delete { background: #fff1f0; color: #ff4d4f; border: 1px solid #ffa39e; }
-        .btn-delete:hover { background: #ff4d4f; color: white; }
+        .btn-secondary {
+            background: #eee;
+            color: #555;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .btn-delete {
+            background: #fff1f0;
+            color: #ff4d4f;
+            border: 1px solid #ffa39e;
+        }
+
+        .btn-delete:hover {
+            background: #ff4d4f;
+            color: white;
+        }
 
         .sub-package-item {
             background: #fafafa;
@@ -168,7 +192,7 @@
             padding: 15px;
             margin-top: 15px;
             margin-bottom: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
 
         .day-input-row {
@@ -178,8 +202,14 @@
             align-items: flex-start;
         }
 
-        .day-input-row input { flex: 0 0 80px; }
-        .day-input-row textarea { flex: 1; min-height: 40px; }
+        .day-input-row input {
+            flex: 0 0 80px;
+        }
+
+        .day-input-row textarea {
+            flex: 1;
+            min-height: 40px;
+        }
 
         .trending-badge {
             background: #fff7e6;
@@ -199,7 +229,8 @@
             border-collapse: collapse;
         }
 
-        .admin-table th, .admin-table td {
+        .admin-table th,
+        .admin-table td {
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid #eee;
@@ -233,7 +264,9 @@
             transition: 0.3s;
         }
 
-        .remove-btn:hover { transform: scale(1.2); }
+        .remove-btn:hover {
+            transform: scale(1.2);
+        }
 
         .admin-tabs {
             display: flex;
@@ -269,13 +302,15 @@
             display: block;
         }
 
-        .booking-card, .review-card, .inquiry-card {
+        .booking-card,
+        .review-card,
+        .inquiry-card {
             background: white;
             padding: 20px;
             border-radius: 12px;
             margin-bottom: 15px;
             border: 1px solid #eee;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
             position: relative;
         }
 
@@ -311,8 +346,15 @@
             text-transform: uppercase;
         }
 
-        .badge-new { background: #e6f7ff; color: #1890ff; }
-        .badge-done { background: #f6ffed; color: #52c41a; }
+        .badge-new {
+            background: #e6f7ff;
+            color: #1890ff;
+        }
+
+        .badge-done {
+            background: #f6ffed;
+            color: #52c41a;
+        }
 
         .rating-stars {
             color: #fadb14;
@@ -320,14 +362,20 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="admin-nav">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="https://res.cloudinary.com/drkgkgiat/image/upload/q_auto/f_auto/v1775567539/Next_TRip_Final_Logo_Square_Size_-_Copy-removebg-preview_bsfsev.png" alt="NextTrip Admin">
+                <img src="https://res.cloudinary.com/drkgkgiat/image/upload/q_auto/f_auto/v1775567539/Next_TRip_Final_Logo_Square_Size_-_Copy-removebg-preview_bsfsev.png"
+                    alt="NextTrip Admin">
             </a>
             <a href="index.html" class="back-link"><i class="fa fa-arrow-left"></i> Back to Site</a>
-            <button onclick="clearAdminData()" style="background: none; border: 1px solid #444; color: #888; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 11px;">Clear Local Data</button>
+            <div style="display:flex;gap:10px;align-items:center;">
+              <button onclick="clearAdminData()"
+                style="background: none; border: 1px solid #444; color: #888; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 11px;">Clear Local Data</button>
+              <button onclick="adminLogout()" style="background:#f28c00;border:none;color:white;padding:7px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;"><i class="fa fa-sign-out-alt"></i> Logout</button>
+            </div>
         </div>
     </nav>
 
@@ -350,15 +398,17 @@
                 <div class="main-content">
                     <div class="admin-card" id="formCard">
                         <h4 id="formTitle">Add New Main Package</h4>
-                        
+
                         <div class="admin-form-group">
                             <label>Main Category Title</label>
-                            <input type="text" id="mainPkgTitle" class="admin-input" placeholder="e.g. India Tour Packages, International Packages">
+                            <input type="text" id="mainPkgTitle" class="admin-input"
+                                placeholder="e.g. India Tour Packages, International Packages">
                         </div>
-                        
+
                         <div class="admin-form-group">
                             <label>Header Image URL</label>
-                            <input type="text" id="mainPkgImage" class="admin-input" placeholder="https://images.unsplash.com/...">
+                            <input type="text" id="mainPkgImage" class="admin-input"
+                                placeholder="https://images.unsplash.com/...">
                         </div>
 
                         <div id="subPackagesContainer">
@@ -369,7 +419,8 @@
                             <i class="fa fa-plus-circle"></i> Add Sub-Category / Region
                         </button>
 
-                        <div style="margin-top: 40px; border-top: 2px solid #eee; padding-top: 20px; display: flex; gap: 15px;">
+                        <div
+                            style="margin-top: 40px; border-top: 2px solid #eee; padding-top: 20px; display: flex; gap: 15px;">
                             <button class="admin-btn btn-add" id="saveBtn" onclick="saveAll()">
                                 <i class="fa fa-save"></i> Save Everything
                             </button>
@@ -428,16 +479,17 @@
     <!-- Templates for Dynamic Content -->
     <template id="subPackageTemplate">
         <div class="sub-package-item">
-            <button class="remove-btn" style="position: absolute; top: 15px; right: 15px;" onclick="$(this).parent().remove()">
+            <button class="remove-btn" style="position: absolute; top: 15px; right: 15px;"
+                onclick="$(this).parent().remove()">
                 <i class="fa fa-trash"></i>
             </button>
             <h5 style="margin-bottom: 15px; color: var(--admin-primary);">Sub-Category (Region)</h5>
-            
+
             <div class="admin-form-group">
                 <label>Region Title</label>
                 <input type="text" class="admin-input sub-title" placeholder="e.g. South India, Europe, Dubai">
             </div>
-            
+
             <div class="admin-form-group">
                 <label>Short Description</label>
                 <textarea class="admin-input sub-desc" placeholder="Briefly describe this region..."></textarea>
@@ -452,7 +504,8 @@
                 <div class="tours-list">
                     <!-- Tours added here -->
                 </div>
-                <button class="admin-btn btn-secondary" style="font-size: 12px; padding: 8px 15px;" onclick="addTourToSub(this)">
+                <button class="admin-btn btn-secondary" style="font-size: 12px; padding: 8px 15px;"
+                    onclick="addTourToSub(this)">
                     <i class="fa fa-plus"></i> Add Specific Tour (e.g. Ooty)
                 </button>
             </div>
@@ -489,7 +542,8 @@
 
             <div class="admin-form-group">
                 <label>Full Description</label>
-                <textarea class="admin-input tour-desc" placeholder="Detailed description for the itinerary page..."></textarea>
+                <textarea class="admin-input tour-desc"
+                    placeholder="Detailed description for the itinerary page..."></textarea>
             </div>
 
             <div class="trending-checkbox-wrap">
@@ -500,7 +554,8 @@
             <div class="itinerary-section" style="margin-top: 20px;">
                 <div class="itinerary-header">
                     <span>Day-by-Day Program</span>
-                    <button class="admin-btn btn-secondary" style="padding: 4px 10px; font-size: 11px;" onclick="addDayToTour(this)">+ Add Day</button>
+                    <button class="admin-btn btn-secondary" style="padding: 4px 10px; font-size: 11px;"
+                        onclick="addDayToTour(this)">+ Add Day</button>
                 </div>
                 <div class="itinerary-list">
                     <!-- Days added here -->
@@ -513,7 +568,8 @@
         <div class="day-input-row">
             <input type="text" class="admin-input day-label" placeholder="Day 1">
             <textarea class="admin-input day-activity" placeholder="What happens on this day?"></textarea>
-            <button class="remove-btn" style="margin-top: 10px;" onclick="$(this).parent().remove()"><i class="fa fa-times-circle"></i></button>
+            <button class="remove-btn" style="margin-top: 10px;" onclick="$(this).parent().remove()"><i
+                    class="fa fa-times-circle"></i></button>
         </div>
     </template>
 
@@ -538,14 +594,27 @@
             console.error("Firebase Initialization Failed:", e);
         }
 
+        // ===== AUTH GUARD =====
+        (function() {
+          if (!sessionStorage.getItem('nexttrip_admin_auth')) {
+            document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column;font-family:sans-serif;background:#f8f9fa;"><div style="text-align:center;"><i class="fa fa-lock" style="font-size:48px;color:#f28c00;margin-bottom:20px;display:block;"></i><h2 style="color:#1a1a1a;margin-bottom:10px;">Access Denied</h2><p style="color:#888;margin-bottom:25px;">Please sign in from the main site to access the admin panel.</p><a href="index.html" style="background:#f28c00;color:white;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;"><i class="fa fa-arrow-left"></i> Go to Main Site</a></div></div>';
+            throw new Error('Unauthorized');
+          }
+        })();
+
         let tourData = JSON.parse(localStorage.getItem('nexttrip_tour_packages')) || [];
         let editingId = null;
+
+        function adminLogout() {
+          sessionStorage.removeItem('nexttrip_admin_auth');
+          window.location.href = 'index.html';
+        }
 
         function switchTab(tabId) {
             console.log('Switching to tab:', tabId);
             $('.tab-link').removeClass('active');
             // Select based on text or specific index if onclick selector is picky
-            $('.tab-link').each(function() {
+            $('.tab-link').each(function () {
                 if ($(this).attr('onclick')?.includes(tabId)) $(this).addClass('active');
             });
 
@@ -567,7 +636,7 @@
                     list.append('<div style="text-align: center; padding: 40px; color: #999;"><i class="fa fa-calendar-xmark" style="font-size: 40px; margin-bottom: 15px; display: block;"></i>No booking details found yet.</div>');
                     return;
                 }
-                
+
                 // Sort by date (newest first)
                 dataArr.sort((a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0));
 
@@ -714,17 +783,17 @@
         function addSubPackage(data = null) {
             const template = document.getElementById('subPackageTemplate').content.cloneNode(true);
             const $item = $(template.firstElementChild);
-            
+
             if (data) {
                 $item.find('.sub-title').val(data.title);
                 $item.find('.sub-desc').val(data.description);
                 $item.find('.sub-image').val(data.image);
-                
+
                 if (data.tours) {
                     data.tours.forEach(t => addTourToSub($item.find('.tours-list'), t));
                 }
             }
-            
+
             $('#subPackagesContainer').append($item);
         }
 
@@ -732,7 +801,7 @@
             const $list = target instanceof jQuery ? target : $(target).siblings('.tours-list');
             const template = document.getElementById('tourTemplate').content.cloneNode(true);
             const $item = $(template.firstElementChild);
-            
+
             if (data) {
                 $item.find('.tour-title').val(data.title);
                 $item.find('.tour-duration').val(data.duration);
@@ -740,12 +809,12 @@
                 $item.find('.tour-image').val(data.image);
                 $item.find('.tour-desc').val(data.description);
                 $item.find('.tour-trending').prop('checked', !!data.isTrending);
-                
+
                 if (data.itinerary) {
                     data.itinerary.forEach(d => addDayToTour($item.find('.itinerary-list'), d));
                 }
             }
-            
+
             $list.append($item);
         }
 
@@ -753,29 +822,29 @@
             const $list = target instanceof jQuery ? target : $(target).parent().parent().find('.itinerary-list');
             const template = document.getElementById('dayTemplate').content.cloneNode(true);
             const $item = $(template.firstElementChild);
-            
+
             if (data) {
                 $item.find('.day-label').val(data.day);
                 $item.find('.day-activity').val(data.activity);
             }
-            
+
             $list.append($item);
         }
 
         function saveAll() {
             const title = $('#mainPkgTitle').val();
             const image = $('#mainPkgImage').val();
-            
+
             if (!title) { alert('Please enter a main title'); return; }
 
             const subPackages = [];
-            $('.sub-package-item').each(function() {
+            $('.sub-package-item').each(function () {
                 const subTitle = $(this).find('.sub-title').val();
                 const subDesc = $(this).find('.sub-desc').val();
                 const subImage = $(this).find('.sub-image').val();
-                
+
                 const tours = [];
-                $(this).find('.tour-item').each(function() {
+                $(this).find('.tour-item').each(function () {
                     const tourTitle = $(this).find('.tour-title').val();
                     const tourDuration = $(this).find('.tour-duration').val();
                     const tourPrice = $(this).find('.tour-price').val();
@@ -784,7 +853,7 @@
                     const isTrending = $(this).find('.tour-trending').is(':checked');
 
                     const itinerary = [];
-                    $(this).find('.day-input-row').each(function() {
+                    $(this).find('.day-input-row').each(function () {
                         const day = $(this).find('.day-label').val();
                         const activity = $(this).find('.day-activity').val();
                         if (day) itinerary.push({ day, activity });
@@ -843,10 +912,10 @@
             editingId = id;
             $('#formTitle').text('Editing: ' + pkg.title);
             $('#saveBtn').html('<i class="fa fa-save"></i> Update Package');
-            
+
             $('#mainPkgTitle').val(pkg.title);
             $('#mainPkgImage').val(pkg.image);
-            
+
             if (pkg.subPackages) {
                 pkg.subPackages.forEach(s => addSubPackage(s));
             }
@@ -875,7 +944,7 @@
         function loadSummary() {
             const $list = $('#packageSummaryList');
             $list.empty();
-            
+
             if (tourData.length === 0) {
                 $list.append('<p style="color: #999; font-size: 13px;">No packages added yet.</p>');
                 return;
@@ -900,11 +969,12 @@
             });
         }
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             loadSummary();
             // Initial blank sub-package if none exists
             if (tourData.length === 0) addSubPackage();
         });
     </script>
 </body>
+
 </html>
