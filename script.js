@@ -305,9 +305,9 @@ window.closeEntrancePopup = function () {
 setTimeout(injectEntrancePopup, 5000);
 
 (function () {
-  
+
   // --- Construction Notice Logic ---
-  window.showConstructionNotice = function() {
+  window.showConstructionNotice = function () {
     let notice = document.querySelector('.construction-notice');
     if (!notice) {
       notice = document.createElement('div');
@@ -315,7 +315,7 @@ setTimeout(injectEntrancePopup, 5000);
       notice.innerHTML = `<i class="fa fa-person-digging"></i> <span>Tour Packages under construction. Coming Soon!</span>`;
       document.body.appendChild(notice);
     }
-    
+
     notice.classList.add('active');
     setTimeout(() => {
       notice.classList.remove('active');
@@ -791,14 +791,76 @@ setTimeout(injectEntrancePopup, 5000);
           ]
         }
       ]
+    },
+    {
+      id: 'boathouse',
+      title: 'Boat House Tours',
+      image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800',
+      subPackages: [
+        {
+          id: 'kerala_backwaters',
+          title: 'Kerala Backwaters',
+          image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600',
+          description: 'Glide through the serene backwaters of Kerala in a traditional houseboat.',
+          tours: [
+            {
+              id: 'alleppey_houseboat',
+              title: 'Alleppey Houseboat',
+              duration: '2 Days / 1 Night',
+              price: '₹8,500',
+              image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=500',
+              isTrending: true,
+              itinerary: [
+                { day: 'Day 1', activity: 'Board houseboat, cruise through backwaters, sunset views.' },
+                { day: 'Day 2', activity: 'Morning cruise, disembark and departure.' }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'exotic',
+      title: 'Exotic Tours',
+      image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800',
+      subPackages: [
+        {
+          id: 'maldives',
+          title: 'Maldives',
+          image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600',
+          description: 'Pristine white beaches, crystal clear waters and overwater bungalows.',
+          tours: [
+            {
+              id: 'maldives_paradise',
+              title: 'Maldives Paradise',
+              duration: '5 Days / 4 Nights',
+              price: '₹65,000',
+              image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=500',
+              isTrending: true,
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrive Malé, speedboat transfer to resort.' },
+                { day: 'Day 2', activity: 'Snorkelling, water sports.' },
+                { day: 'Day 3', activity: 'Dolphin cruise, island hopping.' },
+                { day: 'Day 4', activity: 'Relaxation and beach activities.' },
+                { day: 'Day 5', activity: 'Departure.' }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'properties',
+      title: 'Premium Properties',
+      image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800',
+      comingSoon: true,
+      subPackages: []
     }
   ];
 
-  // Initialize or get data
+  // Initialize or get data - reset if count < 5 (new packages added)
   let tourPackages = JSON.parse(localStorage.getItem('nexttrip_tour_packages'));
-
-  // Migration: Reset if needed or initial load
-  if (!tourPackages || tourPackages.length < 2) {
+  if (!tourPackages || tourPackages.length < 5) {
     tourPackages = defaultTourData;
     localStorage.setItem('nexttrip_tour_packages', JSON.stringify(tourPackages));
   }
@@ -807,24 +869,27 @@ setTimeout(injectEntrancePopup, 5000);
     const grid = document.getElementById('mainPackagesGrid');
     if (!grid) return;
 
+    // Always re-read from localStorage so admin changes reflect live
+    tourPackages = JSON.parse(localStorage.getItem('nexttrip_tour_packages')) || tourPackages;
+
     grid.innerHTML = tourPackages.map((pkg, idx) => {
       let className = '';
       if (idx === 0) className = 'pkg-large';
       else if (idx === 1) className = 'pkg-medium';
+      // idx 2,3,4 use CSS nth-child rules
 
-      // RESTRICTED: Only apply Coming Soon to "Premium Properties"
-      const isComingSoon = pkg.title.toLowerCase().includes('premium properties');
+      const isComingSoon = pkg.comingSoon || pkg.title.toLowerCase().includes('premium properties');
       const clickHandler = isComingSoon ? `showConstructionNotice()` : `showSubPackagesGrid('${pkg.id}')`;
       const extraClass = isComingSoon ? 'coming-soon' : '';
+      const subCount = pkg.subPackages ? pkg.subPackages.length : 0;
+      const btnLabel = isComingSoon ? 'Coming Soon' : (subCount > 0 ? subCount + ' Regions' : 'Explore');
 
       return `
         <div class="pkg-card ${className} ${extraClass}" onclick="${clickHandler}">
           <img src="${pkg.image}" alt="${pkg.title}">
           <div class="pkg-overlay">
             <h3>${pkg.title}</h3>
-            <a href="#" class="pkg-btn" onclick="event.stopPropagation(); ${clickHandler}">
-               ${pkg.subPackages ? pkg.subPackages.length : 0} Regions
-            </a>
+            <a href="#" class="pkg-btn" onclick="event.stopPropagation(); ${clickHandler}">${btnLabel}</a>
           </div>
         </div>
       `;
