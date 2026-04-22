@@ -739,27 +739,132 @@ setTimeout(injectEntrancePopup, 5000);
   // ===== 12. DYNAMIC TOUR PACKAGES LOGIC =====
   const defaultTourData = [
     {
-      id: 'india',
-      title: 'India Tour Packages',
-      image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800',
+      id: 'south_india',
+      title: 'South India Tours',
+      image: 'https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=800',
       subPackages: [
         {
-          id: 'south_india',
-          title: 'South India',
-          image: 'https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=600',
-          description: 'South India is a treasure trove of culture, heritage, and natural beauty.',
+          id: 'tamilnadu',
+          title: 'Tamil Nadu',
+          image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600',
+          description: 'Land of temples and hill stations.',
           tours: [
             {
-              id: 'ooty_hills',
-              title: 'Ooty Heritage',
-              duration: '5 Days / 4 Nights',
-              price: '₹14,500',
-              image: 'https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=600',
-              description: 'Ooty, the Queen of Hill Stations, offers breathtaking views of the Nilgiris...',
+              id: 'ooty_5d',
+              title: 'Ooty Misty Hills',
+              duration: '4 Days / 3 Nights',
+              price: '₹12,499',
               isTrending: true,
+              image: 'https://images.unsplash.com/photo-1590050752117-23a9d7fc91bc?w=500',
               itinerary: [
-                { day: 'Day 1', activity: 'Arrival in Ooty, check-in to your resort.' },
-                { day: 'Day 2', activity: 'Visit the Botanical Gardens.' }
+                { day: 'Day 1', activity: 'Arrival in Ooty, transfer to hotel. Evening boat ride at Ooty Lake.' },
+                { day: 'Day 2', activity: 'Full day sightseeing: Botanical Garden, Rose Garden, and Doddabetta Peak.' },
+                { day: 'Day 3', activity: 'Pykara Lake and Waterfalls excursion. Visit Shooting Spot.' },
+                { day: 'Day 4', activity: 'Coonoor day trip via Toy Train. Transfer to Coimbatore for departure.' }
+              ]
+            },
+            {
+              id: 'kodai_4d',
+              title: 'Kodaikanal Dreams',
+              duration: '4 Days / 3 Nights',
+              price: '₹11,999',
+              image: 'https://images.unsplash.com/photo-1626243810143-dd0e152011b4?w=500',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Kodaikanal, Leisure walk by Kodai Lake.' },
+                { day: 'Day 2', activity: 'Coakers Walk, Bryant Park, and Silver Cascade Falls.' },
+                { day: 'Day 3', activity: 'Pillar Rocks, Guna Caves (Devil’s Kitchen), and Pine Forest.' },
+                { day: 'Day 4', activity: 'Kurinji Andavar Temple and departure.' }
+              ]
+            },
+            {
+              id: 'kanya_4d',
+              title: 'Kanyakumari Spiritual',
+              duration: '4 Days / 3 Nights',
+              price: '₹13,500',
+              image: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=500',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Kanyakumari. Evening visit to the Sunset Point.' },
+                { day: 'Day 2', activity: 'Vivekananda Rock Memorial and Thiruvalluvar Statue via ferry.' },
+                { day: 'Day 3', activity: 'Kumari Amman Temple and Suchindram Temple visit.' },
+                { day: 'Day 4', activity: 'Sunrise view and departure.' }
+              ]
+            },
+            {
+              id: 'dhanush_4d',
+              title: 'Dhanushkodi Heritage',
+              duration: '4 Days / 3 Nights',
+              price: '₹14,200',
+              image: 'https://images.unsplash.com/photo-1544218683-1188319f303d?w=500',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Rameshwaram. Visit Ramanathaswamy Temple.' },
+                { day: 'Day 2', activity: 'Trip to Dhanushkodi Ghost Town and Arichal Munai (Ram Setu point).' },
+                { day: 'Day 3', activity: 'Pamban Bridge view and local island tour.' },
+                { day: 'Day 4', activity: 'Conclusion of tour and departure.' }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'kerala',
+          title: 'Kerala',
+          image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776756222/ChatGPT_Image_Apr_21_2026_12_53_08_PM_jktxte.png',
+          description: 'God’s Own Country.',
+          tours: [
+            {
+              id: 'kerala_5d',
+              title: 'Kerala Backwaters & Hills',
+              duration: '5 Days / 4 Nights',
+              price: '₹16,800',
+              image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776756222/ChatGPT_Image_Apr_21_2026_12_53_08_PM_jktxte.png',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Cochin, drive to Munnar. Stay in resort.' },
+                { day: 'Day 2', activity: 'Munnar Tea Garden tour and Eravikulam National Park.' },
+                { day: 'Day 3', activity: 'Drive to Alleppey. Houseboat check-in and backwater cruise.' },
+                { day: 'Day 4', activity: 'Varkala Beach excursion and leisure.' },
+                { day: 'Day 5', activity: 'Departure from Cochin.' }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'andra',
+          title: 'Andhra Pradesh',
+          image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776887171/ChatGPT_Image_Apr_23_2026_01_15_23_AM_kq9zzk.png',
+          description: 'The City of Destiny and Spiritual Abodes.',
+          tours: [
+            {
+              id: 'andra_4d',
+              title: 'Andhra Coastal Gems',
+              duration: '4 Days / 3 Nights',
+              price: '₹15,500',
+              image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776887171/ChatGPT_Image_Apr_23_2026_01_15_23_AM_kq9zzk.png',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Vizag. evening at RK Beach.' },
+                { day: 'Day 2', activity: 'Submarine Museum and Kailasagiri Hill Park.' },
+                { day: 'Day 3', activity: 'Araku Valley excursion and Borra Caves.' },
+                { day: 'Day 4', activity: 'Simhachalam Temple and departure.' }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'karnataka',
+          title: 'Karnataka',
+          image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776887269/ChatGPT_Image_Apr_23_2026_01_17_02_AM_tco2rq.png',
+          description: 'One State, Many Worlds.',
+          tours: [
+            {
+              id: 'karnataka_5d',
+              title: 'Karnataka Heritage',
+              duration: '5 Days / 4 Nights',
+              price: '₹17,200',
+              image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776887269/ChatGPT_Image_Apr_23_2026_01_17_02_AM_tco2rq.png',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Bangalore. Mysore Palace visit in the evening.' },
+                { day: 'Day 2', activity: 'Mysore Brindavan Gardens and Chamundi Hills.' },
+                { day: 'Day 3', activity: 'Drive to Coorg. Abbey Falls and Madikeri Fort.' },
+                { day: 'Day 4', activity: 'Dubare Elephant Camp and Golden Temple (Bylakuppe).' },
+                { day: 'Day 5', activity: 'Return to Bangalore for departure.' }
               ]
             }
           ]
@@ -785,7 +890,152 @@ setTimeout(injectEntrancePopup, 5000);
               image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500',
               isTrending: true,
               itinerary: [
-                { day: 'Day 1', activity: 'Bangkok City Tour' }
+                { day: 'Day 1', activity: 'Bangkok City Tour & Temple Visits.' },
+                { day: 'Day 2', activity: 'Floating Market and Safari World adventure.' },
+                { day: 'Day 3', activity: 'Pattaya Coral Island tour with water sports.' },
+                { day: 'Day 4', activity: 'Alcazar Show and Pattaya exploration.' },
+                { day: 'Day 5', activity: 'Shopping at MBK Center and departure.' }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'europe',
+          title: 'Europe',
+          image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600',
+          description: 'Experience the magic of Europe with visits to 3 iconic cities.',
+          tours: [
+            {
+              id: 'europe_classic',
+              title: 'Classic Europe',
+              duration: '4 Days / 3 Nights',
+              price: '₹85,000',
+              image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Paris, Eiffel Tower visit and Seine River Cruise.' },
+                { day: 'Day 2', activity: 'Travel to Switzerland, exploration of the Swiss Alps and Lucerne.' },
+                { day: 'Day 3', activity: 'Visit to Rome, Colosseum tour and city exploration.' },
+                { day: 'Day 4', activity: 'Breakfast and departure from Rome.' }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'australia',
+          title: 'Australia',
+          image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=600',
+          description: 'Explore the land down under with visits to Sydney, Melbourne, and Gold Coast.',
+          tours: [
+            {
+              id: 'australia_highlights',
+              title: 'Australia Highlights',
+              duration: '4 Days / 3 Nights',
+              price: '₹95,000',
+              image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=600',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Sydney, Sydney Opera House tour and Bondi Beach.' },
+                { day: 'Day 2', activity: 'Melbourne city tour and Great Ocean Road excursion.' },
+                { day: 'Day 3', activity: 'Gold Coast exploration and Surfers Paradise beach.' },
+                { day: 'Day 4', activity: 'Leisure time and departure from Brisbane/Gold Coast.' }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'germany',
+          title: 'Germany',
+          image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776660767/Gemini_Generated_Image_lkbq8olkbq8olkbq_ilvgxt.png',
+          description: 'Discover Germany’s rich history and modern charm in Berlin, Munich, and Hamburg.',
+          tours: [
+            {
+              id: 'germany_explore',
+              title: 'Germany Explorer',
+              duration: '4 Days / 3 Nights',
+              price: '₹75,000',
+              image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776660767/Gemini_Generated_Image_lkbq8olkbq8olkbq_ilvgxt.png',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Berlin, Brandenburg Gate and Berlin Wall tour.' },
+                { day: 'Day 2', activity: 'Munich city tour and visit to Neuschwanstein Castle.' },
+                { day: 'Day 3', activity: 'Hamburg exploration and harbor cruise.' },
+                { day: 'Day 4', activity: 'Breakfast and departure from Hamburg.' }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'malaysia',
+          title: 'Malaysia',
+          image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776660769/Gemini_Generated_Image_kp70jvkp70jvkp70_xwve8f.png',
+          description: 'A vibrant mix of modern skyline and natural wonders in Malaysia.',
+          tours: [
+            {
+              id: 'malaysia_highland',
+              title: 'Malaysia Highland & City',
+              duration: '4 Days / 3 Nights',
+              price: '₹26,500',
+              image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776660769/Gemini_Generated_Image_kp70jvkp70jvkp70_xwve8f.png',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in KLIA, transfer to Kuala Lumpur. Embark on a half-day city tour featuring historical monuments, heritage areas, and cultural zones. Hotel check-in and leisure.' },
+                { day: 'Day 2', activity: 'Full-day Cameron Highlands tour. Explore tea plantations (BOH/Cameron Valley), fruit orchards, and strawberry farms in the cool highland environment.' },
+                { day: 'Day 3', activity: 'Transfer to Genting Highlands via Batu Caves. Enjoy the cable car ride and a full day at the Indoor Theme Park and First World Plaza.' },
+                { day: 'Day 4', activity: 'Breakfast, hotel check-out, and transfer to KLIA for your onward journey.' }
+              ]
+            },
+            {
+              id: 'malaysia_sunway',
+              title: 'Malaysia Sunway & City',
+              duration: '4 Days / 3 Nights',
+              price: '₹28,200',
+              image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776660769/Gemini_Generated_Image_kp70jvkp70jvkp70_xwve8f.png',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in KLIA and transfer to your Kuala Lumpur hotel. Relax and enjoy a free evening exploring the local metropolitan culture.' },
+                { day: 'Day 2', activity: 'Full-day Sunway Lagoon day tour. Explore all 6 parks including the Water Park, Amusement Park, Wildlife Park, and more.' },
+                { day: 'Day 3', activity: 'Half-day Kuala Lumpur city tour visiting the Petronas Twin Towers, King\'s Palace, and historical heritage sites.' },
+                { day: 'Day 4', activity: 'Breakfast and leisure time until your transfer to KLIA for departure.' }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'singapore',
+          title: 'Singapore',
+          image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776667411/Gemini_Generated_Image_i4lo2i4lo2i4lo2i_hewfcq.png',
+          description: 'The Lion City offers a futuristic experience with nature integrated beautifully.',
+          tours: [
+            {
+              id: 'singapore_voyage',
+              title: 'Singapore Voyage',
+              duration: '4 Days / 3 Nights',
+              price: '₹35,000',
+              image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776667411/Gemini_Generated_Image_i4lo2i4lo2i4lo2i_hewfcq.png',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival at Changi Airport and transfer to hotel. Enjoy a half-day city tour featuring Merlion Park, Suntec City, and the bustling Civic District.' },
+                { day: 'Day 2', activity: 'Experience the magic of Sentosa Island and Universal Studios Singapore. Enjoy a world of movie-themed rides and attractions across 7 immersive zones.' },
+                { day: 'Day 3', activity: 'Visit the futuristic Gardens by the Bay (Flower Dome & Cloud Forest) and witness the spectacular night show at Marina Bay Sands.' },
+                { day: 'Day 4', activity: 'Leisurely breakfast and shopping at Orchard Road before your transfer to the airport for departure.' }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'andaman',
+          title: 'Andaman Islands',
+          image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776754462/ChatGPT_Image_Apr_21_2026_12_22_50_PM_a8ue7e.png',
+          description: 'Pristine beaches and turquoise waters await you in the Andaman & Nicobar Islands.',
+          tours: [
+            {
+              id: 'andaman_escape',
+              title: 'Andaman Escape',
+              duration: '6 Days / 5 Nights',
+              price: '₹38,000',
+              image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776754462/ChatGPT_Image_Apr_21_2026_12_22_50_PM_a8ue7e.png',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Port Blair, Cellular Jail visit and Light & Sound show.' },
+                { day: 'Day 2', activity: 'Ferry to Havelock Island, visit Radhanagar Beach.' },
+                { day: 'Day 3', activity: 'Elephant Beach excursion and water sports (snorkeling).' },
+                { day: 'Day 4', activity: 'Travel to Neil Island, visit Bharatpur and Laxmanpur Beaches.' },
+                { day: 'Day 5', activity: 'Return to Port Blair, shopping and city exploration.' },
+                { day: 'Day 6', activity: 'Breakfast and departure from Port Blair.' }
               ]
             }
           ]
@@ -800,19 +1050,21 @@ setTimeout(injectEntrancePopup, 5000);
         {
           id: 'kerala_backwaters',
           title: 'Kerala Backwaters',
-          image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600',
-          description: 'Glide through the serene backwaters of Kerala in a traditional houseboat.',
+          image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=600',
+          description: 'Experience the soul of Kerala through its serene backwaters.',
           tours: [
             {
-              id: 'alleppey_houseboat',
+              id: 'alleppey_5d',
               title: 'Alleppey Houseboat',
-              duration: '2 Days / 1 Night',
-              price: '₹8,500',
-              image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=500',
-              isTrending: true,
+              duration: '5 Days / 4 Nights',
+              price: '₹18,500',
+              image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=500',
               itinerary: [
-                { day: 'Day 1', activity: 'Board houseboat, cruise through backwaters, sunset views.' },
-                { day: 'Day 2', activity: 'Morning cruise, disembark and departure.' }
+                { day: 'Day 1', activity: 'Arrival in Alleppey, Check-in at Houseboat. Enjoy sunset cruise and dinner.' },
+                { day: 'Day 2', activity: 'Backwater cruise through Vembanad Lake. Visit R-Block and C-Block paddy fields.' },
+                { day: 'Day 3', activity: 'Village walk and local coir making units. Authentic Kerala lunch served on board.' },
+                { day: 'Day 4', activity: 'Cruise towards Pathiramanal Island. Bird watching and evening relaxation on deck.' },
+                { day: 'Day 5', activity: 'Breakfast on boat, check-out and transfer for your onward journey.' }
               ]
             }
           ]
@@ -824,6 +1076,50 @@ setTimeout(injectEntrancePopup, 5000);
       title: 'Exotic Tours',
       image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800',
       subPackages: [
+        {
+          id: 'exotic_tn',
+          title: 'Tamil Nadu',
+          image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776755895/ChatGPT_Image_Apr_21_2026_12_47_57_PM_xbn8lt.png',
+          description: 'Experience the misty charm of Ooty, the Queen of Hill Stations.',
+          tours: [
+            {
+              id: 'exotic_ooty_5d',
+              title: 'Ooty Misty Retreat',
+              duration: '5 Days / 4 Nights',
+              price: '₹14,999',
+              image: 'https://res.cloudinary.com/drkgkgiat/image/upload/v1776755874/ChatGPT_Image_Apr_21_2026_12_47_19_PM_aawmvu.png',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Ooty, transfer to hotel. Evening boat ride at Ooty Lake.' },
+                { day: 'Day 2', activity: 'Full day sightseeing: Botanical Garden, Rose Garden and Doddabetta Peak.' },
+                { day: 'Day 3', activity: 'Tea Factory & Museum visit, and evening at the local market.' },
+                { day: 'Day 4', activity: 'Pykara Lake, Waterfalls excursion and Shooting Spot visit.' },
+                { day: 'Day 5', activity: 'Coonoor sightseeing (Sims Park, Lambs Rock) and departure from Coimbatore.' }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'exotic_kerala',
+          title: 'Kerala',
+          image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=600',
+          description: 'A perfect blend of Munnar\'s greenery and Palakkad\'s heritage.',
+          tours: [
+            {
+              id: 'munnar_palakkad_5d',
+              title: 'Munnar & Palakkad Escape',
+              duration: '5 Days / 4 Nights',
+              price: '₹16,500',
+              image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=500',
+              itinerary: [
+                { day: 'Day 1', activity: 'Arrival in Palakkad, visit the historic Palakkad Fort.' },
+                { day: 'Day 2', activity: 'Malampuzha Dam Garden and Rock Garden exploration.' },
+                { day: 'Day 3', activity: 'Drive to Munnar. Visit Echo Point and Mattupetty Dam.' },
+                { day: 'Day 4', activity: 'Eravikulam National Park and Tea Museum tour.' },
+                { day: 'Day 5', activity: 'Morning tea garden walk and departure from Cochin/Palakkad.' }
+              ]
+            }
+          ]
+        },
         {
           id: 'maldives',
           title: 'Maldives',
@@ -858,9 +1154,14 @@ setTimeout(injectEntrancePopup, 5000);
     }
   ];
 
-  // Initialize or get data - reset if count < 5 (new packages added)
+  // Initialize or get data - reset if count < 5 or new content missing
   let tourPackages = JSON.parse(localStorage.getItem('nexttrip_tour_packages'));
-  if (!tourPackages || tourPackages.length < 5) {
+  const hasFlattenedSouth = tourPackages && JSON.stringify(tourPackages).includes('south_india') && !JSON.stringify(tourPackages).includes('india');
+  const hasExoticUpdate = tourPackages && JSON.stringify(tourPackages).includes('Munnar & Palakkad');
+  const hasBoatHouseUpdate = tourPackages && JSON.stringify(tourPackages).includes('Kerala Backwaters');
+  const hasMalaysiaUpdate = tourPackages && JSON.stringify(tourPackages).includes('Cameron Highlands');
+
+  if (!tourPackages || tourPackages.length < 5 || !hasFlattenedSouth || !hasExoticUpdate || !hasBoatHouseUpdate || !hasMalaysiaUpdate) {
     tourPackages = defaultTourData;
     localStorage.setItem('nexttrip_tour_packages', JSON.stringify(tourPackages));
   }
