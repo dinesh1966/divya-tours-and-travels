@@ -157,7 +157,7 @@
       <div class="nav-right">
         <span class="phone-link"><i class="fa fa-phone"></i> +91 9976692604</span>
         <button class="icon-btn"><i class="fa fa-search"></i></button>
-        <button class="icon-btn"><i class="fa fa-user"></i></button>
+        <button class="icon-btn" onclick="openAdminLogin()" title="Admin Login"><i class="fa fa-user"></i></button>
       </div>
 
       <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -181,11 +181,14 @@
     <!-- Hero Image Slider -->
     <div class="hero-slider" id="heroSlider">
       <div class="hero-slide active"
-        style="background-image: url('https://res.cloudinary.com/drkgkgiat/image/upload/v1776759695/Gemini_Generated_Image_5vgpnd5vgpnd5vgp_g9yrfp.png')"></div>
+        style="background-image: url('https://res.cloudinary.com/drkgkgiat/image/upload/v1776759695/Gemini_Generated_Image_5vgpnd5vgpnd5vgp_g9yrfp.png')">
+      </div>
       <div class="hero-slide"
-        style="background-image: url('https://res.cloudinary.com/drkgkgiat/image/upload/v1776759692/Gemini_Generated_Image_o6fmjmo6fmjmo6fm_neszo1.png')"></div>
+        style="background-image: url('https://res.cloudinary.com/drkgkgiat/image/upload/v1776759692/Gemini_Generated_Image_o6fmjmo6fmjmo6fm_neszo1.png')">
+      </div>
       <div class="hero-slide"
-        style="background-image: url('https://res.cloudinary.com/drkgkgiat/image/upload/v1776667719/Gemini_Generated_Image_eaexceaexceaexce_g5mngg.png')"></div>
+        style="background-image: url('https://res.cloudinary.com/drkgkgiat/image/upload/v1776667719/Gemini_Generated_Image_eaexceaexceaexce_g5mngg.png')">
+      </div>
     </div>
 
     <!-- Slider Navigation Arrows -->
@@ -221,21 +224,7 @@
       </div>
       <div class="packages-grid" id="mainPackagesGrid">
         <!-- Packages will be loaded dynamically from script.js -->
-        <div class="pkg-card pkg-large" onclick="openSubPackagesGrid('india')">
-          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800" alt="India">
-          <div class="pkg-overlay">
-            <h3>India Tour Packages</h3>
-            <a href="#" class="pkg-btn">Explore Categories</a>
-          </div>
-        </div>
-        <div class="pkg-card pkg-medium" onclick="openSubPackagesGrid('international')">
-          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600" alt="International">
-          <div class="pkg-overlay">
-            <h3>International Packages</h3>
-            <a href="#" class="pkg-btn">Explore Categories</a>
-          </div>
-        </div>
-        <!-- More will be handled by dynamic logic if needed, but keeping these as placeholders that work -->
+        <!-- Packages rendered dynamically by script.js -->
       </div>
     </div>
   </section>
@@ -449,7 +438,9 @@
         <div class="gallery-item" data-category="europe" data-title="Paris Romance" data-place="Paris, France"
           onclick="openLightbox(this)">
           <div class="gallery-img-wrap">
-            <img src="https://res.cloudinary.com/drkgkgiat/image/upload/v1776672647/Gemini_Generated_Image_2hfzc52hfzc52hfz_l8ciwi.png" alt="Paris">
+            <img
+              src="https://res.cloudinary.com/drkgkgiat/image/upload/v1776672647/Gemini_Generated_Image_2hfzc52hfzc52hfz_l8ciwi.png"
+              alt="Paris">
             <div class="gallery-overlay">
               <div class="gallery-place-label"><i class="fa fa-location-dot"></i> Paris, France</div>
               <div class="zoom-btn"><i class="fa fa-expand"></i></div>
@@ -479,7 +470,9 @@
         <div class="gallery-item" data-category="africa" data-title="Egyptian Wonders" data-place="Giza, Egypt"
           onclick="openLightbox(this)">
           <div class="gallery-img-wrap">
-            <img src="https://res.cloudinary.com/drkgkgiat/image/upload/v1776672769/Gemini_Generated_Image_52gfas52gfas52gf_amnf0q.png" alt="Egypt">
+            <img
+              src="https://res.cloudinary.com/drkgkgiat/image/upload/v1776672769/Gemini_Generated_Image_52gfas52gfas52gf_amnf0q.png"
+              alt="Egypt">
             <div class="gallery-overlay">
               <div class="gallery-place-label"><i class="fa fa-location-dot"></i> Giza, Egypt</div>
               <div class="zoom-btn"><i class="fa fa-expand"></i></div>
@@ -1019,6 +1012,89 @@
       </div>
     </div>
   </div>
+
+  <!-- ===== ADMIN LOGIN MODAL ===== -->
+  <div class="booking-modal-overlay" id="adminLoginModal" style="z-index: 30000; display:none; opacity:0; visibility:hidden; transition:0.3s;">
+    <div class="booking-modal-box" style="max-width:420px; position:relative;">
+      <button class="close-modal-btn" onclick="closeAdminLogin()"><i class="fa fa-times"></i></button>
+      <div class="modal-header-premium" style="text-align:center; margin-bottom:25px;">
+        <div style="width:60px;height:60px;background:linear-gradient(135deg,#f28c00,#e07d00);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+          <i class="fa fa-user-shield" style="color:white;font-size:24px;"></i>
+        </div>
+        <h3>Admin <span>Login</span></h3>
+        <p>Enter your credentials to access the admin panel.</p>
+      </div>
+      <div class="modal-form-grid" style="display:block;">
+        <div class="modal-group" style="margin-bottom:18px;">
+          <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px;">Username</label>
+          <input type="text" id="adminUsername" class="admin-input" placeholder="Enter username" style="width:100%;padding:12px 15px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;outline:none;transition:0.3s;" onkeydown="if(event.key==='Enter')doAdminLogin()">
+        </div>
+        <div class="modal-group" style="margin-bottom:25px;">
+          <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px;">Password</label>
+          <div style="position:relative;">
+            <input type="password" id="adminPassword" class="admin-input" placeholder="Enter password" style="width:100%;padding:12px 15px;border:1.5px solid #ddd;border-radius:8px;font-size:15px;outline:none;transition:0.3s;" onkeydown="if(event.key==='Enter')doAdminLogin()">
+            <button onclick="togglePwdVisibility()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#888;" id="pwdToggleBtn"><i class="fa fa-eye" id="pwdToggleIcon"></i></button>
+          </div>
+        </div>
+        <div id="adminLoginError" style="display:none;background:#fff1f0;border:1px solid #ffa39e;color:#cf1322;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:18px;text-align:center;">
+          <i class="fa fa-circle-exclamation"></i> Invalid username or password. Try again.
+        </div>
+        <button onclick="doAdminLogin()" style="width:100%;padding:14px;background:linear-gradient(135deg,#f28c00,#e07d00);color:white;border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;transition:0.3s;letter-spacing:0.5px;" id="adminLoginBtn">
+          <i class="fa fa-sign-in-alt"></i> Sign In to Admin
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openAdminLogin() {
+      const m = document.getElementById('adminLoginModal');
+      m.style.display = 'flex';
+      setTimeout(() => { m.style.opacity = '1'; m.style.visibility = 'visible'; }, 10);
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => document.getElementById('adminUsername').focus(), 100);
+      document.getElementById('adminLoginError').style.display = 'none';
+      document.getElementById('adminUsername').value = '';
+      document.getElementById('adminPassword').value = '';
+    }
+    function closeAdminLogin() {
+      const m = document.getElementById('adminLoginModal');
+      m.style.opacity = '0';
+      m.style.visibility = 'hidden';
+      setTimeout(() => { m.style.display = 'none'; }, 300);
+      document.body.style.overflow = '';
+    }
+    function togglePwdVisibility() {
+      const pwd = document.getElementById('adminPassword');
+      const icon = document.getElementById('pwdToggleIcon');
+      if (pwd.type === 'password') { pwd.type = 'text'; icon.className = 'fa fa-eye-slash'; }
+      else { pwd.type = 'password'; icon.className = 'fa fa-eye'; }
+    }
+    function doAdminLogin() {
+      const u = document.getElementById('adminUsername').value.trim();
+      const p = document.getElementById('adminPassword').value.trim();
+      const errEl = document.getElementById('adminLoginError');
+      const btn = document.getElementById('adminLoginBtn');
+      if (u === 'admin' && p === '1234') {
+        btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Redirecting...';
+        btn.style.opacity = '0.8';
+        errEl.style.display = 'none';
+        sessionStorage.setItem('nexttrip_admin_auth', 'true');
+        setTimeout(() => { window.location.href = 'admin.html'; }, 800);
+      } else {
+        errEl.style.display = 'block';
+        document.getElementById('adminUsername').style.border = '1.5px solid #ff4d4f';
+        document.getElementById('adminPassword').style.border = '1.5px solid #ff4d4f';
+        setTimeout(() => {
+          document.getElementById('adminUsername').style.border = '1.5px solid #ddd';
+          document.getElementById('adminPassword').style.border = '1.5px solid #ddd';
+        }, 2000);
+      }
+    }
+    // Close on overlay click
+    document.getElementById('adminLoginModal').addEventListener('click', function(e) {
+      if (e.target === this) closeAdminLogin();
+    });
+  </script>
 
   <!-- ===== TOUR ITINERARY DETAIL OVERLAY ===== -->
   <div class="tour-detail-overlay" id="tourDetailOverlay">
