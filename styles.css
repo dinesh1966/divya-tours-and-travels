@@ -5127,7 +5127,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   z-index: 100000;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s;
   opacity: 0;
@@ -5170,5 +5170,5 @@ textarea {
   letter-spacing: 2px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   white-space: nowrap;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-}
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
